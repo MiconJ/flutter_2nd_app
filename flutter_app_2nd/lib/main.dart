@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_2nd/dummy_data/dummy_data.dart';
 import 'package:flutter_app_2nd/screens/categories.dart';
+import 'package:flutter_app_2nd/screens/meals.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final theme = ThemeData(
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter App',
       theme: theme,
-      home: CategoriesScreen(
+      home: const CategoriesScreen(
         screenTitle: "Categories here",
       ),
     );

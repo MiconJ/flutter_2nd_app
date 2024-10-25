@@ -6,24 +6,30 @@ class CategoriesScreen extends StatelessWidget {
   final String screenTitle;
   const CategoriesScreen({super.key, required this.screenTitle});
 
+  void _selectCategory() {
+    // Navigator.push(context, route)
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(screenTitle),
-      ),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(20),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(screenTitle),
         ),
-        itemCount: availableCategories.length,
-        itemBuilder: (context, index) {
-          return CategoryGridItem(categoryItem: availableCategories[index]);
-        },
+        body: GridView.builder(
+          padding: const EdgeInsets.all(20),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 3 / 2,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
+          ),
+          itemCount: availableCategories.length,
+          itemBuilder: (context, index) {
+            return CategoryGridItem(categoryItem: availableCategories[index]);
+          },
+        ),
       ),
     );
   }
